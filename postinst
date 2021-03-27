@@ -4,6 +4,7 @@ killall -KILL \
 	analyticsd \
 	aggregated \
 	assetsd \
+	assistantd \
 	bulletindistributord \
 	CAReportingService \
 	cloudd \
@@ -23,6 +24,7 @@ killall -KILL \
 	mediaserverd \
 	MobileGestaltHelper \
 	nanoprefsyncd \
+	navd \
 	newsd \
 	nsurlsessiond \
 	pairedsyncd \
@@ -37,6 +39,7 @@ killall -KILL \
 	siriknowledged \
 	splashboardd \
 	suggestd \
+	tursd \
 	wcd \
 	webbookmarksd \
 	wifianalyticsd \

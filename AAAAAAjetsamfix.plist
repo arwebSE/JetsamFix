@@ -10,6 +10,7 @@
 			<string>analyticsd</string>
 			<string>aggregated</string>
 			<string>assetsd</string>
+			<string>assistantd</string>
 			<string>bulletindistributord</string>
 			<string>CAReportingService</string>
 			<string>cloudd</string>
@@ -29,6 +30,7 @@
 			<string>mediaserverd</string>
 			<string>MobileGestaltHelper</string>
 			<string>nanoprefsyncd</string>
+			<string>navd</string>
 			<string>newsd</string>
 			<string>nsurlsessiond</string>
 			<string>pairedsyncd</string>
@@ -43,6 +45,7 @@
 			<string>siriknowledged</string>
 			<string>splashboardd</string>
 			<string>suggestd</string>
+			<string>tursd</string>
 			<string>wcd</string>
 			<string>webbookmarksd</string>
 			<string>wifianalyticsd</string>
