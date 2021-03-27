@@ -12,14 +12,19 @@ killall -KILL \
 	healthappd \
 	HeuristicInterpreter \
 	kbd \
+	locationd \
+	mediaserverd \
 	MobileGestaltHelper \
 	newsd \
 	powerlogHelperd \
 	PowerUIAgent \
+	searchd \
 	searchpartyd \
 	siriactionsd \
 	siriknowledged \
+	splashboardd \
 	suggestd \
 	webbookmarksd \
+	wifianalyticsd \
 	2>/dev/null
 exit 0

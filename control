@@ -3,7 +3,7 @@ Name: JetsamFix
 Depends: firmware (>= 13.0), mobilesubstrate
 Version: 1.0.0
 Architecture: iphoneos-arm
-Description: A workaround for jetsam limit related crashes
+Description: A workaround for crashes related to jetsam memory management.
 Maintainer: ARWeb
 Author: ARWeb
 Section: Tweaks

@@ -18,6 +18,8 @@
 			<string>healthappd</string>
 			<string>HeuristicInterpreter</string>
 			<string>kbd</string>
+			<string>locationd</string>
+			<string>mediaserverd</string>
 			<string>MobileGestaltHelper</string>
 			<string>newsd</string>
 			<string>powerlogHelperd</string>
@@ -25,6 +27,7 @@
 			<string>searchpartyd</string>
 			<string>siriactionsd</string>
 			<string>siriknowledged</string>
+			<string>splashboardd</string>
 			<string>suggestd</string>
 			<string>webbookmarksd</string>
 			<string>wifianalyticsd</string>
