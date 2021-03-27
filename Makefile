@@ -7,8 +7,8 @@ TWEAK_NAME = AAAAAAjetsamfix
 ARCHS = arm64 arm64e
 
 AAAAAAjetsamfix_FILES = Tweak.x
+AAAAAAjetsamfix_CFLAGS = -fobjc-arc
 #AAAAAAjetsamfix_FRAMEWORKS = CoreFoundation
-#AAAAAAjetsamfix_CFLAGS = -w -framework
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
