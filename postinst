@@ -6,24 +6,38 @@ killall -KILL \
 	assetsd \
 	bulletindistributord \
 	CAReportingService \
+	cloudd \
+	contextstored \
+	coreduetd \
+	corespeechd \
 	dasd \
+	druid \
 	duetexpertd \
 	exchangesyncd \
 	healthappd \
+	healthd \
 	HeuristicInterpreter \
+	iconservicesagent \
 	kbd \
 	locationd \
 	mediaserverd \
 	MobileGestaltHelper \
+	nanoprefsyncd \
 	newsd \
+	nsurlsessiond \
+	pairedsyncd \
+	pkd \
+	pkreporter \
 	powerlogHelperd \
 	PowerUIAgent \
+	remindd \
 	searchd \
 	searchpartyd \
 	siriactionsd \
 	siriknowledged \
 	splashboardd \
 	suggestd \
+	wcd \
 	webbookmarksd \
 	wifianalyticsd \
 	2>/dev/null
