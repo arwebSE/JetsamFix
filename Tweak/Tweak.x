@@ -2,6 +2,7 @@
 #import <os/log.h>
 #import <string.h>
 #import "Tweak.h"
+#include <RemoteLog.h> // DEBUG
 
 BOOL enabled;
 
@@ -30,6 +31,9 @@ BOOL enabled;
   	[preferences registerBool:&enabled default:YES forKey:@"Enabled"];
 
 	if (enabled) {
+		RLog(@"JetsamFix: Tweak enabled!"); // DEBUG
 		%init(JetsamFix);
-  	}
+  	} else {
+		RLog(@"JetsamFix: Tweak disabled."); // DEBUG
+	}
 }

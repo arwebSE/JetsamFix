@@ -2,10 +2,7 @@
 #import <Cephei/HBRespringController.h>
 #import "../Tweak/Tweak.h"
 
-BOOL enabled = NO;
-
-UIBlurEffect* blur;
-UIVisualEffectView* blurView;
+BOOL enabled = YES;
 
 @implementation JFRootListController
 
@@ -66,6 +63,9 @@ UIVisualEffectView* blurView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
+    self.blurView = [[UIVisualEffectView alloc] initWithEffect:[self blur]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -189,21 +189,20 @@ UIVisualEffectView* blurView;
 }
 
 - (void)respring {
-    blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
-    blurView = [[UIVisualEffectView alloc] initWithEffect:blur];
-    [blurView setFrame:self.view.bounds];
-    [blurView setAlpha:0.0];
-    [[self view] addSubview:blurView];
+
+    [[self blurView] setFrame:[[self view] bounds]];
+    [[self blurView] setAlpha:0.0];
+    [[self view] addSubview:[self blurView]];
 
     [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        [blurView setAlpha:0];
+        [[self blurView] setAlpha:1.0];
     } completion:^(BOOL finished) {
-        [self respringUtil];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:@"/Library/MobileSubstrate/DynamicLibraries/shuffle.dylib"])
+            [HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=JetsamFix"]];
+        else
+            [HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=Tweaks&path=JetsamFix"]];
     }];
-}
 
-- (void)respringUtil {
-    [HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=JetsamFix"]];
 }
 
 - (void)setCellForRowAtIndexPath:(NSIndexPath *)indexPath enabled:(BOOL)enabled {

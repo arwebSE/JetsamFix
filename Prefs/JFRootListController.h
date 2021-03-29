@@ -18,10 +18,11 @@
 @property (nonatomic, retain) UIView *headerView;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic, retain) UIBlurEffect* blur;
+@property (nonatomic, retain) UIVisualEffectView* blurView;
 - (void)toggleState;
 - (void)setEnableSwitchState;
 - (void)respring;
-- (void)respringUtil;
 - (void)setCellForRowAtIndexPath:(NSIndexPath *)indexPath enabled:(BOOL)enabled;
 @end
 
