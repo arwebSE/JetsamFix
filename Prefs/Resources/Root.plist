@@ -19,11 +19,11 @@
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
-			<false/>
+			<true/>
 			<key>defaults</key>
 			<string>se.arweb.jfprefs</string>
 			<key>key</key>
-			<string>showEmoji</string>
+			<string>Enabled</string>
 			<key>label</key>
 			<string>Enable JetsamFix</string>
 			<key>PostNotification</key>

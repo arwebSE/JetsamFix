@@ -1,7 +1,11 @@
 #include "JFRootListController.h"
+#import <Cephei/HBRespringController.h>
 #import "../Tweak/Tweak.h"
 
 BOOL enabled = NO;
+
+UIBlurEffect* blur;
+UIVisualEffectView* blurView;
 
 @implementation JFRootListController
 
@@ -10,6 +14,9 @@ BOOL enabled = NO;
     self = [super init];
 
     if (self) {
+        JFAppearanceSettings* appearanceSettings = [[JFAppearanceSettings alloc] init];
+        self.hb_appearanceSettings = appearanceSettings;
+
         self.enableSwitch = [[UISwitch alloc] init];
         self.enableSwitch.onTintColor = [UIColor systemGreenColor];
         [self.enableSwitch addTarget:self action:@selector(toggleState) forControlEvents:UIControlEventTouchUpInside];
@@ -58,26 +65,7 @@ BOOL enabled = NO;
 }
 
 - (void)viewDidLoad {
-
     [super viewDidLoad];
-
-    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,200,200)];
-    self.headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,200,200)];
-    self.headerImageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.headerImageView.image = [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/JFPrefs.bundle/Banner.png"];
-    self.headerImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.headerImageView.clipsToBounds = YES;
-
-    [self.headerView addSubview:self.headerImageView];
-    [NSLayoutConstraint activateConstraints:@[
-        [self.headerImageView.topAnchor constraintEqualToAnchor:self.headerView.topAnchor],
-        [self.headerImageView.leadingAnchor constraintEqualToAnchor:self.headerView.leadingAnchor],
-        [self.headerImageView.trailingAnchor constraintEqualToAnchor:self.headerView.trailingAnchor],
-        [self.headerImageView.bottomAnchor constraintEqualToAnchor:self.headerView.bottomAnchor],
-    ]];
-
-    _table.tableHeaderView = self.headerView;
-
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -167,19 +155,19 @@ BOOL enabled = NO;
     if (!([[NSFileManager defaultManager] fileExistsAtPath:@"/var/mobile/Library/Preferences/se.arweb.jfprefs.plist"])) {
         enabled = YES;
         [preferences setBool:enabled forKey:@"Enabled"];
-        /* [self respring]; */
+        [self respring];
     } else if (!([allKeys containsObject:@"Enabled"])) {
         enabled = YES;
         [preferences setBool:enabled forKey:@"Enabled"];
-        /* [self respring]; */
+        [self respring];
     } else if ([[preferences objectForKey:@"Enabled"] isEqual:@(NO)]) {
         enabled = YES;
         [preferences setBool:enabled forKey:@"Enabled"];
-        /* [self respring]; */
+        [self respring];
     } else if ([[preferences objectForKey:@"Enabled"] isEqual:@(YES)]) {
         enabled = NO;
         [preferences setBool:enabled forKey:@"Enabled"];
-        /* [self respring]; */
+        [self respring];
     }
 
 }
@@ -202,8 +190,25 @@ BOOL enabled = NO;
 
 }
 
-- (void)setCellForRowAtIndexPath:(NSIndexPath *)indexPath enabled:(BOOL)enabled {
+- (void)respring {
+    blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
+    blurView = [[UIVisualEffectView alloc] initWithEffect:blur];
+    [blurView setFrame:self.view.bounds];
+    [blurView setAlpha:0.0];
+    [[self view] addSubview:blurView];
 
+    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [blurView setAlpha:0];
+    } completion:^(BOOL finished) {
+        [self respringUtil];
+    }];
+}
+
+- (void)respringUtil {
+    [HBRespringController respringAndReturnTo:[NSURL URLWithString:@"prefs:root=JetsamFix"]];
+}
+
+- (void)setCellForRowAtIndexPath:(NSIndexPath *)indexPath enabled:(BOOL)enabled {
     UITableViewCell *cell = [self tableView:self.table cellForRowAtIndexPath:indexPath];
 
     if (cell) {
@@ -219,7 +224,6 @@ BOOL enabled = NO;
             ((UITextField*)[editableCell textField]).alpha = enabled ? 1 : 0.4;
         }
     }
-
 }
 
 @end

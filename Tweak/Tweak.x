@@ -27,7 +27,7 @@ BOOL enabled;
 %ctor {
 	preferences = [[HBPreferences alloc] initWithIdentifier:@"se.arweb.jfprefs"];
 
-  	[preferences registerBool:&enabled default:nil forKey:@"Enabled"];
+  	[preferences registerBool:&enabled default:YES forKey:@"Enabled"];
 
 	if (enabled) {
 		%init(JetsamFix);

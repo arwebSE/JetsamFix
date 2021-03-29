@@ -21,6 +21,8 @@
 @property (nonatomic, retain) UIImageView *iconView;
 - (void)toggleState;
 - (void)setEnableSwitchState;
+- (void)respring;
+- (void)respringUtil;
 - (void)setCellForRowAtIndexPath:(NSIndexPath *)indexPath enabled:(BOOL)enabled;
 @end
 
