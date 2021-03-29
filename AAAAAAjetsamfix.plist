@@ -10,45 +10,49 @@
 			<string>analyticsd</string>
 			<string>aggregated</string>
 			<string>assetsd</string>
-			<string>assistantd</string>
 			<string>bulletindistributord</string>
 			<string>CAReportingService</string>
-			<string>cloudd</string>
-			<string>contextstored</string>
-			<string>coreduetd</string>
-			<string>corespeechd</string>
 			<string>dasd</string>
-			<string>druid</string>
 			<string>duetexpertd</string>
 			<string>exchangesyncd</string>
 			<string>healthappd</string>
-			<string>healthd</string>
 			<string>HeuristicInterpreter</string>
-			<string>iconservicesagent</string>
 			<string>kbd</string>
+			<string>MobileGestaltHelper</string>
+			<string>newsd</string>
+			<string>powerlogHelperd</string>
+			<string>PowerUIAgent</string>
+			<string>searchpartyd</string>
+			<string>siriactionsd</string>
+			<string>siriknowledged</string>
+			<string>suggestd</string>
+			<string>webbookmarksd</string>
+			<!-- New additions -->
+			<string>wifianalyticsd</string>
+			<string>coreduetd</string>
+			<string>nsurlsessiond</string>
+			<!--
+			<string>assistantd</string>
+			<string>cloudd</string>
+			<string>contextstored</string>
+			<string>corespeechd</string>
+			<string>druid</string>
+			<string>healthd</string>
+			<string>iconservicesagent</string>
 			<string>locationd</string>
 			<string>mediaserverd</string>
-			<string>MobileGestaltHelper</string>
 			<string>nanoprefsyncd</string>
 			<string>navd</string>
-			<string>newsd</string>
 			<string>nsurlsessiond</string>
 			<string>pairedsyncd</string>
 			<string>pkd</string>
 			<string>pkreporter</string>
-			<string>powerlogHelperd</string>
-			<string>PowerUIAgent</string>
 			<string>remindd</string>
 			<string>searchd</string>
-			<string>searchpartyd</string>
-			<string>siriactionsd</string>
-			<string>siriknowledged</string>
 			<string>splashboardd</string>
-			<string>suggestd</string>
 			<string>tursd</string>
 			<string>wcd</string>
-			<string>webbookmarksd</string>
-			<string>wifianalyticsd</string>
+			-->
 		</array>
 	</dict>
 </dict>

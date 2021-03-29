@@ -4,44 +4,46 @@ killall -KILL \
 	analyticsd \
 	aggregated \
 	assetsd \
-	assistantd \
 	bulletindistributord \
 	CAReportingService \
-	cloudd \
-	contextstored \
-	coreduetd \
-	corespeechd \
 	dasd \
-	druid \
 	duetexpertd \
 	exchangesyncd \
 	healthappd \
-	healthd \
 	HeuristicInterpreter \
-	iconservicesagent \
 	kbd \
-	locationd \
-	mediaserverd \
 	MobileGestaltHelper \
-	nanoprefsyncd \
-	navd \
 	newsd \
-	nsurlsessiond \
-	pairedsyncd \
-	pkd \
-	pkreporter \
 	powerlogHelperd \
 	PowerUIAgent \
-	remindd \
-	searchd \
 	searchpartyd \
 	siriactionsd \
 	siriknowledged \
-	splashboardd \
 	suggestd \
-	tursd \
-	wcd \
 	webbookmarksd \
 	wifianalyticsd \
+	coreduetd \
+	nsurlsessiond \
 	2>/dev/null
 exit 0
+
+#	assistantd \
+#	cloudd \
+#	contextstored \
+#	corespeechd \
+#	druid \
+#	healthd \
+#	iconservicesagent \
+#	locationd \
+#	mediaserverd \
+#	nanoprefsyncd \
+#	navd \
+#	nsurlsessiond \
+#	pairedsyncd \
+#	pkd \
+#	pkreporter \
+#	remindd \
+#	searchd \
+#	splashboardd \
+#	tursd \
+#	wcd \
