@@ -24,9 +24,12 @@ killall -KILL \
 	wifianalyticsd \
 	coreduetd \
 	nsurlsessiond \
+	druid \
+	distnoded \
 	2>/dev/null
 exit 0
 
+## Unconfirmed culprit
 #	assistantd \
 #	cloudd \
 #	contextstored \

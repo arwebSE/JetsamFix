@@ -1,6 +1,6 @@
 Package: se.arweb.jetsamfix
 Name: JetsamFix
-Depends: firmware (>= 14.0), mobilesubstrate
+Depends: firmware (>= 14.0), mobilesubstrate, ws.hbang.common (>= 1.16)
 Version: 1.0.0
 Architecture: iphoneos-arm
 Description: A workaround for crashes related to jetsam memory management.

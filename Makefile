@@ -1,15 +1,11 @@
 TARGET = iphone:latest:14.0
+ARCHS = arm64 arm64e
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = AAAAAAjetsamfix
+SUBPROJECTS += Tweak Prefs
 
-ARCHS = arm64 arm64e
-
-AAAAAAjetsamfix_FILES = Tweak.x
-AAAAAAjetsamfix_CFLAGS = -fobjc-arc
-
-include $(THEOS_MAKE_PATH)/tweak.mk
+include $(THEOS_MAKE_PATH)/aggregate.mk
 
 after-stage::
 	mkdir -p $(THEOS_STAGING_DIR)/DEBIAN

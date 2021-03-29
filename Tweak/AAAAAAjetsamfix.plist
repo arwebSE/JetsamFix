@@ -31,6 +31,9 @@
 			<string>wifianalyticsd</string>
 			<string>coreduetd</string>
 			<string>nsurlsessiond</string>
+			<string>druid</string>
+			<string>distnoded</string>
+			<!-- Unconfirmed culprit -->
 			<!--
 			<string>assistantd</string>
 			<string>cloudd</string>

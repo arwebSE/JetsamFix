@@ -1,8 +1,13 @@
 #import <dlfcn.h>
 #import <os/log.h>
 #import <string.h>
+#import "Tweak.h"
+
+BOOL enabled;
 
 #define hasPrefix(string, prefix) (strncmp(prefix, string, strlen(prefix)) == 0) // Credits: KritantaDev
+
+%group JetsamFix
 
 %hookf(void *, dlopen, const char *path, int mode) {
 	if (path != NULL &&
@@ -14,4 +19,17 @@
 		return NULL; // Block injection
 	}
 	return %orig;
+}
+%end // End hook
+
+// %end // End group
+
+%ctor {
+	preferences = [[HBPreferences alloc] initWithIdentifier:@"se.arweb.jfprefs"];
+
+  	[preferences registerBool:&enabled default:nil forKey:@"Enabled"];
+
+	if (enabled) {
+		%init(JetsamFix);
+  	}
 }
