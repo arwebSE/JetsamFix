@@ -1,3 +1,6 @@
+ARCHS = arm64 arm64e
+TARGET = iphone:latest:14.0
+
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = AAAAAAjetsamfix

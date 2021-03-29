@@ -1,3 +1,6 @@
+ARCHS = arm64 arm64e
+TARGET = iphone:latest:14.0
+
 BUNDLE_NAME = JFPrefs
 $(BUNDLE_NAME)_FILES = $(wildcard *.m)
 $(BUNDLE_NAME)_INSTALL_PATH = /Library/PreferenceBundles

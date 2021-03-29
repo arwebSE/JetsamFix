@@ -1,6 +1,3 @@
-TARGET = iphone:latest:14.0
-ARCHS = arm64 arm64e
-
 include $(THEOS)/makefiles/common.mk
 
 SUBPROJECTS += Tweak Prefs
