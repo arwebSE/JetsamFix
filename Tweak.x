@@ -1,9 +1,6 @@
 #import <dlfcn.h>
 #import <os/log.h>
 #import <string.h>
-#include <RemoteLog.h> // DEBUG
-
-BOOL enabled;
 
 #define hasPrefix(string, prefix) (strncmp(prefix, string, strlen(prefix)) == 0) // Credits: KritantaDev
 
@@ -25,6 +22,6 @@ BOOL enabled;
 // %end // End group
 
 %ctor {
-	RLog(@"[%@]JetsamFix: Tweak enabled!", Time); // DEBUG
+	os_log(OS_LOG_DEFAULT, "JetsamFix: Tweak loaded!"); // LOG
 	%init(JetsamFix);
 }
