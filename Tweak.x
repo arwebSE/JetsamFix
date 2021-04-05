@@ -1,7 +1,6 @@
 #import <dlfcn.h>
 #import <os/log.h>
 #import <string.h>
-#import "Tweak.h"
 #include <RemoteLog.h> // DEBUG
 
 BOOL enabled;
@@ -26,18 +25,6 @@ BOOL enabled;
 // %end // End group
 
 %ctor {
-	preferences = [[HBPreferences alloc] initWithIdentifier:@"se.arweb.jfprefs"];
-  	[preferences registerBool:&enabled default:YES forKey:@"Enabled"];
-
-	NSDateFormatter *timeformatter = [[NSDateFormatter alloc] init];
-	[timeformatter setTimeStyle: NSDateFormatterShortStyle];
-	[timeformatter setDateFormat:@"hh:mm:ss a"];
-	NSString *Time  = [timeformatter stringFromDate:[NSDate date]];
-
-	if (enabled) {
-		RLog(@"[%@]JetsamFix: Tweak enabled!", Time); // DEBUG
-		%init(JetsamFix);
-  	} else {
-		RLog(@"[%@]JetsamFix: Tweak disabled.", Time); // DEBUG
-	}
+	RLog(@"[%@]JetsamFix: Tweak enabled!", Time); // DEBUG
+	%init(JetsamFix);
 }
