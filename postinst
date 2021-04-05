@@ -26,6 +26,10 @@ killall -KILL \
 	nsurlsessiond \
 	druid \
 	distnoded \
+	corespeechd \
+	splashboardd \
+	fitcored \
+	searchd \
 	2>/dev/null
 exit 0
 
@@ -33,20 +37,15 @@ exit 0
 #	assistantd \
 #	cloudd \
 #	contextstored \
-#	corespeechd \
-#	druid \
 #	healthd \
 #	iconservicesagent \
 #	locationd \
 #	mediaserverd \
 #	nanoprefsyncd \
 #	navd \
-#	nsurlsessiond \
 #	pairedsyncd \
 #	pkd \
 #	pkreporter \
 #	remindd \
-#	searchd \
-#	splashboardd \
 #	tursd \
 #	wcd \
