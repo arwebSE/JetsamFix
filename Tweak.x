@@ -4,8 +4,6 @@
 
 #define hasPrefix(string, prefix) (strncmp(prefix, string, strlen(prefix)) == 0) // Credits: KritantaDev
 
-%group JetsamFix
-
 %hookf(void *, dlopen, const char *path, int mode) {
 	if (path != NULL &&
 		(hasPrefix(path, "/Library/MobileSubstrate/DynamicLibraries") || hasPrefix(path, "/usr/lib/TweakInject")) &&
@@ -18,10 +16,3 @@
 	return %orig;
 }
 %end // End hook
-
-// %end // End group
-
-%ctor {
-	os_log(OS_LOG_DEFAULT, "JetsamFix: Tweak loaded!"); // LOG
-	%init(JetsamFix);
-}
